@@ -26,6 +26,7 @@ class PersonCollectionViewCell: UICollectionViewCell, NibLoadable {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var labelLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var starsView: CosmosView!
+    @IBOutlet weak var imageContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

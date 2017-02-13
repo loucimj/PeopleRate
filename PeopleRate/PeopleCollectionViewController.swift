@@ -29,7 +29,13 @@ struct Person {
         self.imageName = imageName
         self.image = UIImage(named: imageName)
         if let colors = image?.getColors() {
-            shadowColor = colors.primaryColor
+            if !colors.primaryColor.isDarkColor {
+                shadowColor = UIColor.black
+            } else {
+                shadowColor = colors.primaryColor
+            }
+        } else {
+            shadowColor = UIColor.black
         }
     }
 }
@@ -110,11 +116,13 @@ extension PeopleCollectionViewController: UICollectionViewDataSource {
         
         myCell.profileImageView.image = person.image
         if let color = person.shadowColor {
-            myCell.profileImageView.layer.shadowColor = color.cgColor
-            myCell.profileImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
-            myCell.profileImageView.layer.shadowRadius = 10
-            myCell.profileImageView.layer.shadowOpacity = 1
+            myCell.imageContainerView.layer.shadowColor = color.cgColor
+        } else {
+            myCell.imageContainerView.layer.shadowColor = UIColor.black.cgColor
         }
+        myCell.imageContainerView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        myCell.imageContainerView.layer.shadowRadius = 3
+        myCell.imageContainerView.layer.shadowOpacity = 0.6
         
 
         myCell.nameLabel.text = person.name.uppercased()
