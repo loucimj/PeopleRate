@@ -1,26 +1,122 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZv-ze-2Kv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Heavy.otf">
+            <string>SFUIDisplay-Heavy</string>
+        </array>
+        <array key="SF-UI-Display-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--People Collection View Controller-->
+        <scene sceneID="hG3-9S-k8Z">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eZv-ze-2Kv" customClass="PeopleCollectionViewController" customModule="PeopleRate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Dvj-hP-eJ0"/>
+                        <viewControllerLayoutGuide type="bottom" id="feQ-A5-7Kn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="HUv-k7-pNT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dES-PK-ueH">
+                                <rect key="frame" x="0.0" y="608" width="375" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ver Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUS-Nw-ivr">
+                                        <rect key="frame" x="26" y="8" width="145" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="19"/>
+                                        <color key="textColor" red="0.38205901019999999" green="0.38205901019999999" blue="0.38205901019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-ZO-AyI">
+                                        <rect key="frame" x="212" y="8" width="145" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Heavy" family="SF UI Display" pointSize="19"/>
+                                        <color key="textColor" red="0.38205901019999999" green="0.38205901019999999" blue="0.38205901019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="vHc-NC-Vbg"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvU-ae-R19">
+                                <rect key="frame" x="0.0" y="80" width="375" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mXP-BD-iXD">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b3D-bx-89Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="eZv-ze-2Kv" id="K2K-ny-z9p"/>
+                                    <outlet property="delegate" destination="eZv-ze-2Kv" id="Sce-CR-vdY"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="UHI-k3-2SJ">
+                                <rect key="frame" x="68" y="36" width="240" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="gFQ-Ti-VbA"/>
+                                    <constraint firstAttribute="height" constant="24" id="v1j-wn-n0q"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburguer" translatesAutoresizingMaskIntoConstraints="NO" id="L9F-P8-WcE">
+                                <rect key="frame" x="12" y="40" width="20" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-search" translatesAutoresizingMaskIntoConstraints="NO" id="xQY-Fl-wVc">
+                                <rect key="frame" x="335" y="34" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PvU-ae-R19" firstAttribute="width" secondItem="HUv-k7-pNT" secondAttribute="width" id="9mR-dJ-y6b"/>
+                            <constraint firstItem="feQ-A5-7Kn" firstAttribute="top" secondItem="PvU-ae-R19" secondAttribute="bottom" constant="50" id="GUd-kX-g4k"/>
+                            <constraint firstItem="UHI-k3-2SJ" firstAttribute="top" secondItem="Dvj-hP-eJ0" secondAttribute="bottom" constant="16" id="PLy-bF-81c"/>
+                            <constraint firstItem="dES-PK-ueH" firstAttribute="width" secondItem="HUv-k7-pNT" secondAttribute="width" id="aRE-Vt-8gR"/>
+                            <constraint firstItem="dES-PK-ueH" firstAttribute="centerX" secondItem="HUv-k7-pNT" secondAttribute="centerX" id="iDY-F8-AWG"/>
+                            <constraint firstItem="PvU-ae-R19" firstAttribute="top" secondItem="Dvj-hP-eJ0" secondAttribute="bottom" constant="60" id="lnB-4H-Gfb"/>
+                            <constraint firstItem="UHI-k3-2SJ" firstAttribute="centerX" secondItem="HUv-k7-pNT" secondAttribute="centerX" id="mhN-8U-AYa"/>
+                            <constraint firstItem="PvU-ae-R19" firstAttribute="centerX" secondItem="HUv-k7-pNT" secondAttribute="centerX" id="nVY-qo-Bfy"/>
+                            <constraint firstItem="feQ-A5-7Kn" firstAttribute="top" secondItem="dES-PK-ueH" secondAttribute="bottom" id="tmR-AQ-Gkn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="PvU-ae-R19" id="XW7-yx-ysZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-ph-lBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-575" y="-654"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hamburguer" width="277" height="151"/>
+        <image name="icon-search" width="18" height="18"/>
+        <image name="logo" width="51" height="12"/>
+    </resources>
 </document>
